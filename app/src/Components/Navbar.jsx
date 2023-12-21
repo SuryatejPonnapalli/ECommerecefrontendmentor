@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="flex flex-col">
         <div className="flex flex-row justify-between">
             <div className="flex flex-row space-x-8 ml-36">
-                <p className=" mr-10 mt-8 font-Kumbh font-bold text-3xl">sneakers</p>
+             <Link to = "/"><p className=" mr-10 mt-8 font-Kumbh font-bold text-3xl">sneakers</p></Link>
                 <p className="font-Kumbh mt-10 text-neutral-400">Collections</p>
                 <p className="font-Kumbh mt-10 text-neutral-400">Men</p>
                 <p className="font-Kumbh mt-10 text-neutral-400">Women</p>
