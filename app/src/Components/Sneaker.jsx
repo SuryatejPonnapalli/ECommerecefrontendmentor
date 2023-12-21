@@ -11,7 +11,7 @@ const Sneaker = ({ imgs }) => {
       </div>
       <div className="flex flex-row mt-8" >
         {imgs.map((img) => (
-          <img src={img.src} alt={img.alt} key={img.id} className=" size-20 mr-[1.65rem] rounded-xl" />
+          <img src={img.src} alt={img.alt} key={img.id} className=" size-20 mr-[1.65rem] rounded-xl hover:border-orange-600 hover:border-2 hover:opacity-60" />
         ))}
       </div>
     </div>
