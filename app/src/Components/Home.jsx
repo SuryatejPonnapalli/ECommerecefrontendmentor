@@ -5,6 +5,7 @@ import prop2 from "./Imgs/image-product-2-thumbnail.jpg";
 import prop3 from "./Imgs/image-product-3-thumbnail.jpg";
 import prop4 from "./Imgs/image-product-4-thumbnail.jpg";
 
+
 const Home = () => {
   const [imgs, setImgs] = useState([
     { src: prop1, alt: "img1", id: 1 },
