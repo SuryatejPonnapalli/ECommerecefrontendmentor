@@ -1,3 +1,7 @@
+import { useState } from 'react';
+
+
+
 const MainImage = ({ props,id }) => {
     const selectedImage = props.find(img => img.id === id);
     return ( 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SneakerText = () => {
+const SneakerText = ({divOpacity , setDivOpacity }) => {
     const[quantity,setQuantity] = useState(0);
 
     const addCart = () =>{
@@ -13,8 +13,9 @@ const SneakerText = () => {
         }
     };
 
+
     return ( 
-        <div className=" mt-12 ml-16 w-5/12">
+        <div className=" mt-12 ml-16 w-5/12"  style={{ filter: `blur(${divOpacity})`}}>
             <p className="text-orange-400 text-sm font-semibold font-Kumbh mb-6">SNEAKER COMPANY</p>
             <p className="text-5xl font-bold pr-7">Fall Limited Edition Sneakers</p>
             <p className=" text-neutral-400 mt-8 text-[0.85rem] font-bold pr-10">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SneakerText from "./SneakerText";
 import MainImage from "./MainImage";
 import prop1 from "./Imgs/image-product-1.jpg";
@@ -15,14 +15,19 @@ const Sneaker = ({ imgs }) => {
         { src: prop4, alt: "img4", id: 4 }
       ]);
     const [Id, setId] = useState(null);
+    const [divOpacity,setDivOpacity] = useState("0px");
+    const [display , setDisplay] = useState(false);
 
     const handleClickEvent = (id) => {
         setId(id);
+        setDivOpacity("10px");
+        setDisplay(true);
     }
 
     return (
+        <div>
         <div className="flex flex-row absolute">
-            <div className="mx-20">
+            <div className="mx-20 " style={{ filter: `blur(${divOpacity})`}}>
                 <div>
                     <img src={prop1} className="size-[25rem] rounded-2xl" alt="main1" />
                 </div>
@@ -38,10 +43,26 @@ const Sneaker = ({ imgs }) => {
                     ))}
                 </div>
             </div>
-            <SneakerText />
+            <SneakerText divOpacity = { divOpacity } setDivOpacity = { setDivOpacity }/>
+            </div>
+            <div className='flex flex-col'>
             {Id !== null && <MainImage props={ props } id={Id} />}
-        </div>
+            {display && (
+            <div className="flex flex-row mt-[30rem] ml-[24.5rem]">
+                    {imgs.map((img) => (
+                        <button key={img.id} onClick={() => handleClickEvent(img.id)} >
+                            <img
+                                src={img.src}
+                                alt={img.alt}
+                                className="size-20 mr-[1.65rem] rounded-xl hover:border-orange-600 hover:border-2 hover:opacity-60"
+                            />
+                        </button>
+                    ))}
+                </div>
+            )}
+            </div>
+            </div>
     );
-};
+}
 
 export default Sneaker;

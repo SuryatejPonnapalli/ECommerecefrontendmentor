@@ -4,6 +4,7 @@ import prop1 from "./Imgs/image-product-1-thumbnail.jpg";
 import prop2 from "./Imgs/image-product-2-thumbnail.jpg";
 import prop3 from "./Imgs/image-product-3-thumbnail.jpg";
 import prop4 from "./Imgs/image-product-4-thumbnail.jpg";
+import MainImage from './MainImage.jsx';
 
 
 const Home = () => {
@@ -14,7 +15,13 @@ const Home = () => {
     { src: prop4, alt: "img4", id: 4 }
   ]);
 
-  return <Sneaker imgs={imgs} />;
+  return (
+    <div>
+      <Sneaker imgs={imgs} /> 
+      
+    </div>
+  
+  );
 };
 
 export default Home;
