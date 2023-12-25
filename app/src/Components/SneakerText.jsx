@@ -1,7 +1,8 @@
 import { useState } from "react";
-
+import Cart from "./Cart";
 const SneakerText = ({divOpacity , setDivOpacity }) => {
     const[quantity,setQuantity] = useState(0);
+    const [sendData,setSendData] = useState(false);
 
     const addCart = () =>{
         setQuantity(quantity+1);
@@ -12,6 +13,10 @@ const SneakerText = ({divOpacity , setDivOpacity }) => {
         setQuantity(quantity-1);
         }
     };
+
+    const handleClickEvent = () => {
+        setSendData(true);
+    }
 
 
     return ( 
@@ -30,14 +35,15 @@ const SneakerText = ({divOpacity , setDivOpacity }) => {
                     <p className="text-m font-bold font-Kumbh">{ quantity }</p>
                     <button onClick={ addCart } className="mr-3 text-orange-400 text-xl font-bold  hover:text-3xl">+</button>
                 </span>
-                <button><span className="flex flex-row bg-orange-500 border-2 ml-3 w-60 rounded-md justify-center items-center h-12">
+                <button><span className="flex flex-row bg-orange-500 border-2 ml-3 w-60 rounded-md justify-center items-center h-12" onClick={handleClickEvent}>
                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#FFFFFF" fill-rule="nonzero"/></svg>
-                <p className="text-white ml-2 font-Kumbh">Add to cart</p>
+                <p className="text-white ml-2 font-Kumbh" >Add to cart</p>
                 </span></button>
             </div>
+            {sendData && <Navbar quantity={quantity} />}
         </div>
+        
      );
-}
- 
+    }
 export default SneakerText;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import Home from './Home.jsx';
+import Cart from './Cart.jsx';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/cart">
-              {/* Add your cart component here */}
+              <Cart/>
             </Route>
           </Switch>
         </div>

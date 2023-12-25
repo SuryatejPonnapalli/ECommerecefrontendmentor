@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SneakerText from "./SneakerText";
 import MainImage from "./MainImage";
 import prop1 from "./Imgs/image-product-1.jpg";
@@ -17,13 +17,24 @@ const Sneaker = ({ imgs }) => {
     const [Id, setId] = useState(null);
     const [divOpacity,setDivOpacity] = useState("0px");
     const [display , setDisplay] = useState(false);
-
-    const handleClickEvent = (id) => {
-        setId(id);
-        setDivOpacity("10px");
-        setDisplay(true);
-    }
-
+    
+    
+        const handleClickEvent = (id) => {
+            setId(id);
+            setDivOpacity("10px");
+            setDisplay(true);
+            
+        }
+    
+        const handleClickEvent2 = () => {
+            console.log("handleClickEvent2 called");
+            setId(null);
+            setDivOpacity("0px");
+            setDisplay(false);
+        }
+    
+      
+    
     return (
         <div>
         <div className="flex flex-row absolute">
@@ -45,7 +56,10 @@ const Sneaker = ({ imgs }) => {
             </div>
             <SneakerText divOpacity = { divOpacity } setDivOpacity = { setDivOpacity }/>
             </div>
-            <div className='flex flex-col'>
+            
+
+            <div className='flex flex-col' >
+            <button onClick={ handleClickEvent2 }>Test</button>
             {Id !== null && <MainImage props={ props } id={Id} />}
             {display && (
             <div className="flex flex-row mt-[30rem] ml-[24.5rem]">
